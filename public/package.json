@@ -1,0 +1,32 @@
+{
+	"name": "example.com",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack",
+		"build:prod": "webpack -p"
+	},
+	"author": "Anil Chaudhari <anil@proshore.eu>",
+	"license": "ISC",
+	"private": true,
+	"dependencies": {
+		"axios": "^0.18.0",
+		"bootstrap": "^4.1.1",
+		"css-loader": "^0.28.11",
+		"font-awesome": "^4.7.0",
+		"install": "^0.11.0",
+		"jquery": "^3.3.1",
+		"npm": "^6.0.1",
+		"rxjs": "^6.1.0",
+		"style-loader": "^0.21.0",
+		"ts-helpers": "^1.1.2"
+	},
+	"devDependencies": {
+		"typescript": "^2.8.3",
+		"webpack": "^4.8.2",
+		"webpack-cli": "^2.1.3"
+	},
+	"mode": "development"
+}

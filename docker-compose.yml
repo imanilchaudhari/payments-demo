@@ -1,0 +1,43 @@
+version: '2'
+services:
+    php:
+        image: ${STACK_PHP_IMAGE}
+
+    mysql:
+        image: 'mysql:latest'
+        volumes:
+            - ./docker/dbdata:/var/lib/mysql
+        ports:
+            - '3300:3306'
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: example
+
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
+        container_name: elasticsearch
+        environment:
+            - cluster.name=docker-cluster
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        volumes:
+            - ./docker/esdata:/usr/share/elasticsearch/data
+        ports:
+            - '9200:9201'
+        networks:
+            - esnet
+    redis:
+        image: redis
+
+volumes:
+    esdata:
+        driver: local
+
+networks:
+    esnet:
+        driver: bridge

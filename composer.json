@@ -1,0 +1,71 @@
+{
+    "name": "imanilchaudhari/payments-demo",
+    "description": "Yii 2 Project Template",
+    "keywords": ["yii2", "framework", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "vlucas/phpdotenv": "2.*",
+        "yiisoft/yii2": "^2.0.16",
+        "yiisoft/yii2-bootstrap": "2.*",
+        "yiisoft/yii2-swiftmailer": "2.*",
+        "yiisoft/yii2-authclient": "^2.1",
+        "yiisoft/yii2-httpclient": "^2.0",
+        "yiisoft/yii2-redis": "~2.0",
+        "yiisoft/yii2-elasticsearch": "2.*",
+        "yiisoft/yii2-jui": "^2.0",
+        "skeeks/yii2-assets-auto-compress": "^1.4",
+        "openpayu/openpayu" : "2.2.*",
+        "paypal/rest-api-sdk-php": "*",
+        "amzn/amazon-pay-sdk-php": "^3.3",
+        "aws/aws-sdk-php": "^3.87"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "2.*",
+        "yiisoft/yii2-gii": "2.*",
+        "yiisoft/yii2-faker": "2.*",
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "config": {
+        "fxp-asset": {
+            "enabled": false,
+            "vcs-driver-options": {
+                "github-no-api": true
+            },
+            "git-skip-update": "2 days",
+            "pattern-skip-version": "(-build|-patch)",
+            "optimize-with-installed-packages": false,
+            "installer-paths": {
+				"npm-asset-library": "vendor/npm",
+				"bower-asset-library": "vendor/bower"
+			}
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+          "@php -r \"file_exists('.env') || copy('.env-dist', '.env');\""
+        ]
+    }
+}
