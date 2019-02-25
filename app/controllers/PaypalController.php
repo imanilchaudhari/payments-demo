@@ -82,8 +82,8 @@ class PaypalController extends Controller
             ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl(Url::to(['/site/confirm'], true));
-        $redirectUrls->setCancelUrl(Url::to(['/site/cancel'], true));
+        $redirectUrls->setReturnUrl(Url::to(['/paypal/confirm'], true));
+        $redirectUrls->setCancelUrl(Url::to(['/paypal/cancel'], true));
 
         $payment = new Payment();
         $payment->setIntent("sale")

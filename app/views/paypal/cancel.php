@@ -1,11 +1,12 @@
 <?php
 
+use yii\helpers\Inflector;
 use yii\helpers\Url;
 
-$this->title = 'Payment success.';
+$this->title = 'At payment cancel.';
 ?>
 <section class="product-listing">
     <div class="container-fluid">
-        <h1>Payment success</h1>
-    </div>
+        <h1>Payment Cancel</h1>
+
 </section>
